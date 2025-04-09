@@ -381,7 +381,6 @@ struct SearchPage {
                 Image($r('app.media.search_logo')).width('400vp')
                 if (this.isHighSearch){
                   Column(){
-
                     List({space: 5}){
                       ForEach(arxivTypeLabels,(item:string, index: number)=> {
                         ListItem(){

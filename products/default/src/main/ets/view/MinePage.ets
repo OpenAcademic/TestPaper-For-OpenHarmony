@@ -1,6 +1,6 @@
 import { dataPreferences } from "../defaultability/DefaultAbility"
 import { webview } from "@kit.ArkWeb"
-import { bundleManager } from "@kit.AbilityKit"
+import { bundleManager, common } from "@kit.AbilityKit"
 import { BusinessError } from "@kit.BasicServicesKit"
 import List from "@ohos.util.List"
 import { promptAction } from "@kit.ArkUI"
@@ -77,6 +77,7 @@ export  struct MinePage {
   @State info : AppleInfo   = new AppleInfo()
   private webviewController: WebviewController = new webview.WebviewController()
   @State mode: WebDarkMode = WebDarkMode.Auto;
+  @State isLoaded : boolean = false
 
   @Builder
   myBuilder() {
@@ -102,6 +103,7 @@ export  struct MinePage {
 
   }
   async getMoreInfo(){
+    this.isLoaded=false
     const bundleInfo =  bundleManager.getBundleInfoForSelfSync(
       0
     );
@@ -164,19 +166,31 @@ export  struct MinePage {
 
       })
     )
-
+    // https://github.com/OpenAcademic/TestPaper-For-OpenHarmony
     this.menus2.push(
       new MenuItemMine2(
-        "开源协议",
+        "开源仓库",
         "OACL V1",
         () =>{
           promptAction.showToast({
             message:"OACL V1",
             duration:500
           })
+          const context = getContext(this) as common.UIAbilityContext;
+          context.openLink('https://github.com/OpenAcademic/TestPaper-For-OpenHarmony', { appLinkingOnly: false })
+            .then(() => {
+            })
+            .catch((error: BusinessError) => {
+            });
 
         })
     )
+    this.getUIContext()?.animateTo({
+      duration: 1000,
+      curve: Curve.Friction
+    }, () => {
+      this.isLoaded=true
+    });
   }
 
   // 获取应用版本号
@@ -236,23 +250,34 @@ export  struct MinePage {
         width:200,
         height:200
       })
-      Grid(){
-        ForEach(this.menus2,(item: MenuItemMine2) =>{
-          GridItem(){
-            Row(){
-              Text(item.name).fontSize(15)
-              Text(item.value.toString()).fontSize(15)
+      if (this.isLoaded){
+        Grid(){
+          ForEach(this.menus2,(item: MenuItemMine2) =>{
+            GridItem(){
+              Row(){
+                Text(item.name).fontSize(15)
+                Text(item.value.toString()).fontSize(15)
 
-            }.width('100%').alignItems(VerticalAlign.Center)
-            .justifyContent(FlexAlign.SpaceBetween)
-            .onClick(e=>{
-              item.func()
-            }).padding(15)
-          }.width('100%')
+              }.width('100%').alignItems(VerticalAlign.Center)
+              .justifyContent(FlexAlign.SpaceBetween)
+              .onClick(e=>{
+                item.func()
+              }).padding(15)
+            }.width('100%')
+          })
+        }.width('90%').margin('4%').backgroundColor(
+          $r('sys.color.ohos_id_color_text_field_sub_bg')
+        ).borderRadius('15vp')
+        .transition( TransitionEffect.OPACITY
+          .animation({ duration: 1000, curve: Curve.Friction }))
+
+      }else{
+        LoadingProgress().size({
+          width:100,
+          height:100
         })
-      }.width('90%').margin('4%').backgroundColor(
-        $r('sys.color.ohos_id_color_text_field_sub_bg')
-      ).borderRadius('15vp')
+      }
+
     }.height('100%')
     .width('100%').alignItems(HorizontalAlign.Center).justifyContent(FlexAlign.Center)
 
