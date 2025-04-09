@@ -1,0 +1,72 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "ability_desc",
+      "value": "description"
+    },
+    {
+      "name": "ability_label",
+      "value": "TestPaper"
+    },
+    {
+      "name": "grid_title_label",
+      "value": "title"
+    },
+    {
+      "name": "adaptive_layout",
+      "value": "adaptive layout"
+    },
+    {
+      "name": "system_cap",
+      "value": "system capabilities"
+    },
+    {
+      "name": "responsive_layout",
+      "value": "responsive layout"
+    },
+    {
+      "name": "location_cap_invalid",
+      "value": "This device does not have the system capability of location service"
+    },
+    {
+      "name": "location_cap_valid",
+      "value": "This device has the system capability of location service"
+    },
+    {
+      "name": "zonglan",
+      "value": "纵览"
+    },
+    {
+      "name": "find",
+      "value": "发现"
+    },
+    {
+      "name": "home",
+      "value": "首页"
+    },
+    {
+      "name": "mine",
+      "value": "我的"
+    },
+    {
+      "name": "DefaultFormAbility_desc",
+      "value": "form_description"
+    },
+    {
+      "name": "DefaultFormAbility_label",
+      "value": "form_label"
+    },
+    {
+      "name": "widget1_desc",
+      "value": "为您展示每日的最新Arxiv论文。"
+    },
+    {
+      "name": "widget1_display_name",
+      "value": "每日Arxiv榜"
+    }
+  ]
+}

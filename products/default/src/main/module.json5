@@ -1,0 +1,88 @@
+{
+  "module": {
+    "name": "default",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "DefaultAbility",
+    "requestPermissions": [
+
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+
+
+    ],
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "DefaultAbility",
+        "srcEntry": "./ets/defaultability/DefaultAbility.ets",
+        "description": "$string:ability_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:ability_label",
+        "startWindowIcon": "$media:testpaper",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+
+          {
+            "actions": [
+              "ohos.want.action.viewData" // 声明数据处理能力
+            ],
+            "uris": [
+              {
+                // 允许打开uri中以file://协议开头标识本地的word文件
+                "scheme": "file",
+                "type": "application/pdf", // 表示支持打开的文件类型
+                "linkFeature": "FileOpen" // 表示此URI的功能为文件打开
+              }
+            ]
+
+          },
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ],
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "DefaultBackupAbility",
+        "srcEntry": "./ets/defaultbackupability/DefaultBackupAbility.ets",
+        "type": "backup",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.backup",
+            "resource": "$profile:backup_config"
+          }
+        ]
+      },
+      {
+        "name": "DefaultFormAbility",
+        "srcEntry": "./ets/defaultformability/DefaultFormAbility.ets",
+        "label": "$string:DefaultFormAbility_label",
+        "description": "$string:DefaultFormAbility_desc",
+        "type": "form",
+        "metadata": [
+          {
+            "name": "ohos.extension.form",
+            "resource": "$profile:form_config"
+          }
+        ]
+      }
+    ]
+  }
+}

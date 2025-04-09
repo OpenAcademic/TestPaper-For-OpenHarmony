@@ -1,0 +1,101 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "release",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "/Users/openacademic/Desktop/LittleProject/ohos/Untitled.p12",
+          "storePassword": "00000019336FD6B1881FDB111F73FF6A1294FEF1B28D8B1E773CD6FADA0CA4804BB29626BA15336668",
+          "keyAlias": "syutung",
+          "keyPassword": "00000019DA7C9B58475737DE9E473A04441DF2F1A4332A2F570EA81A4BC065FA71CE4879A55026DEB6",
+          "signAlg": "SHA256withECDSA",
+          "profile": "/Users/openacademic/Desktop/LittleProject/ohos/dfdfRelease.p7b",
+          "certpath": "/Users/openacademic/Desktop/LittleProject/ohos/ddddd.cer"
+        }
+      },
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/openacademic/.ohos/config/default_MyApplication_JPJcJc0eri27-S2H8UE9IpGRXCxo7vbOiz-rZ2JbBj0=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A57CE78BFDE81D76E48A423B9A094E4A4795F2B1B06A7E579F96629B1DE9F2DE6D239EA2AC2CF",
+          "profile": "/Users/openacademic/.ohos/config/default_MyApplication_JPJcJc0eri27-S2H8UE9IpGRXCxo7vbOiz-rZ2JbBj0=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/openacademic/.ohos/config/default_MyApplication_JPJcJc0eri27-S2H8UE9IpGRXCxo7vbOiz-rZ2JbBj0=.p12",
+          "storePassword": "0000001A275FB202829DBA95CA7179C9DCC7A479D72C7A43C6109788DBB53B7F9C4737A58218809C6EAB"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default2",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.3(15)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      },
+      {
+        "name": "default",
+        "signingConfig": "release",
+        "compatibleSdkVersion": "5.0.4(16)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      },
+      {
+        "name": "release",
+        "signingConfig": "release",
+        "compatibleSdkVersion": "5.0.4(16)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "default",
+      "srcPath": "./products/default",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "common",
+      "srcPath": "./common",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

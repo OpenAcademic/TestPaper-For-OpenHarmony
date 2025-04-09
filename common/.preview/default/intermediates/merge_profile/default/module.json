@@ -1,0 +1,27 @@
+{
+	"app": {
+		"bundleName": "com.example.myapplication",
+		"debug": true,
+		"versionCode": 1000000,
+		"versionName": "1.0.0",
+		"minAPIVersion": 50001013,
+		"targetAPIVersion": 50003015,
+		"apiReleaseType": "Beta2",
+		"compileSdkVersion": "5.0.3.131",
+		"compileSdkType": "HarmonyOS",
+		"appEnvironments": [],
+		"bundleType": "app",
+		"buildMode": "debug"
+	},
+	"module": {
+		"name": "common",
+		"type": "har",
+		"deviceTypes": [
+			"phone",
+			"tablet",
+			"2in1"
+		],
+		"packageName": "@ohos/common",
+		"installationFree": false
+	}
+}

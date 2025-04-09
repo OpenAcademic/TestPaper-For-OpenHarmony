@@ -1,0 +1,10 @@
+{
+  "app": {
+    "bundleName": "cn.ac.oac.hongbaoshuai.google",
+    "vendor": "example",
+    "versionCode": 1000009,
+    "versionName": "0.0.4.105.4",
+    "icon": "$media:layered_image",
+    "label": "$string:app_name"
+  }
+}

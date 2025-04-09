@@ -1,0 +1,9 @@
+{
+  "src": [
+    "pages/ResponsiveIndex",
+    "pages/PDFReaderPage",
+    "pages/PaperDetailPage",
+    "pages/SearchPage",
+    "pages/InitPage"
+  ]
+}

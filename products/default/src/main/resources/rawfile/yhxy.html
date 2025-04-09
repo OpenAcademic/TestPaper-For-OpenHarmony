@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>TestPaper 用户协议</title>
+    <style>
+    </style>
+</head>
+<body>
+<h1>TestPaper 用户协议</h1>
+<p><strong>生效日期：2025年4月6日</strong></p>
+
+<div>
+    <strong>特别提示：</strong>请在使用本软件前仔细阅读并理解本协议。免除或限制责任的条款已加粗标注，您应重点阅读。
+</div>
+
+<h2>一、协议范围</h2>
+<p>1.1 本协议由您（用户）与TestPaper开发者共同缔结，适用于您通过本软件使用arXiv论文查阅服务的全部行为[1,6](@ref)。</p>
+<p>1.2 本软件为开源工具，<strong>不涉及账户注册及个人信息收集</strong>，用户数据默认仅存储于设备本地。</p>
+
+<h2>二、服务内容</h2>
+<p>2.1 核心功能：通过arXiv API获取论文元数据（标题/作者/DOI），调用系统PDF查看器展示文件，功能实现需以下权限：</p>
+<ul>
+    <li><strong>网络权限</strong>：访问arXiv数据库（<code>android.permission.INTERNET</code>）</li>
+    <li><strong>通知权限</strong>：推送下载进度（系统级通知，不含用户数据）</li>
+</ul>
+
+<h2>三、用户义务</h2>
+<p>3.1 您承诺：</p>
+<ul>
+    <li>不利用本软件传输违法信息（包括但不限于煽动性言论、侵权内容）[1,6](@ref)</li>
+    <li>不进行逆向工程、恶意爬取arXiv数据等破坏服务的行为</li>
+</ul>
+<p>3.2 <strong>论文内容责任</strong>：本软件仅提供论文访问工具，对arXiv内容的真实性、合法性不承担责任。</p>
+
+<h2>四、数据与隐私</h2>
+<p>4.1 数据存储：下载的PDF文件及浏览记录<strong>仅保存于设备本地</strong>，采用AES-256加密技术保护[3](@ref)。</p>
+<p>4.2 数据删除：卸载本软件将自动清除所有本地数据，用户亦可手动删除<code>/Documents/TestPaper</code>目录。</p>
+
+<h2>五、免责声明</h2>
+<p>5.1 因下列情形导致的服务中断，本软件不承担责任：</p>
+<ul>
+    <li>arXiv服务器故障或API限制</li>
+    <li>设备系统PDF查看器兼容性问题</li>
+    <li>不可抗力（如自然灾害、政府管制）[7](@ref)</li>
+</ul>
+<p>5.2 本软件<strong>不提供诊断性功能</strong>，论文内容解读需用户自行判断。</p>
+
+<h2>六、协议变更</h2>
+<p>更新版本将通过弹窗的形式公示，继续使用视为接受修订条款。</p>
+
+<h2>七、法律适用</h2>
+<p>本协议受中华人民共和国法律管辖。</p>
+
+<hr>
+<style type="text/css">
+    * {
+      margin: 0;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.9);
+    }
+    body {
+      max-width: 860px;
+      margin: auto;
+      padding: 2rem 2rem 5rem 2rem;
+    }
+    ul {
+      padding: 0;
+    }
+    a {
+      color: #0a59f7;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    #icon {
+      font-size: 0;
+      text-align: center;
+    }
+    #icon svg {
+      display: none;
+      width: 4rem;
+      height: 4rem;
+    }
+    #update-time {
+      text-align: center;
+      span {
+        font-size: 14px;
+      }
+    }
+    .font-secondary {
+      color: rgba(0, 0, 0, 0.6);
+    }
+    .icon-emphasize {
+      color: rgba(10, 89, 247, 1);
+    }
+    #firstDesc {
+      margin-top: 3rem;
+    }
+    #firstDesc span {
+      font-weight: 600;
+    }
+    #privacyName {
+      margin: 2rem 0 0.5rem;
+      text-align: center;
+      font-size: 18px;
+    }
+    #device-permissions {
+      display: none;
+    }
+    th {
+      padding: 9px 5px;
+    }
+    td {
+      padding: 9px 5px;
+      p {
+        line-height: 24px;
+      }
+    }
+    table {
+      table-layout: fixed;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+    tr:nth-child(odd) td {
+      background: #f7f7f7;
+    }
+    .privacy-word {
+      word-break: break-all;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .text-right {
+      text-align: right;
+    }
+    .text-left {
+      text-align: left;
+    }
+    h5 {
+      word-break: break-all;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+    h6 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      word-break: break-all;
+      line-height: 1.4;
+    }
+    #date-info {
+      margin-top: 40px;
+    }
+    .share-content {
+      margin-bottom: 2rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #000000;
+      }
+      .font-secondary {
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .icon-emphasize {
+        color: rgba(82, 145, 255, 1);
+      }
+      * {
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+</style>
+<style id="style">
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: rgba(0, 0, 0, 1.0);
+      }
+    }
+</style>
+</body>
+</html>
